@@ -22,8 +22,8 @@ public class CelciusFarenheitConverter extends JFrame{
 
 	public CelciusFarenheitConverter(){
 		super("Celcius Farenheit Converter");
-		setSize(500, 300);
-		setLocation(600, 300);
+		setSize(500,300);
+		setLocation(600,300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		panel = new JPanel();
@@ -46,7 +46,7 @@ public class CelciusFarenheitConverter extends JFrame{
 		reset = new JButton("Reset");
 		panel.add(reset);
 
-		add(panel);
+		getContentPane().add(panel);
 
 		convertBtn.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae){
@@ -61,7 +61,7 @@ public class CelciusFarenheitConverter extends JFrame{
 						double celcius = (double)(farentocel - 32.0)*5.0/9.0; 
 						outputLabel.setText(String.format("%.2f",celcius));
 					}
-				}catch(NumberFormatException num){
+				}catch(NumberFormatException num){ //if any other characters other than numbers are typed
 					JOptionPane.showMessageDialog(null, "Please type numbers for temperature conversions");
 				}
 			}
@@ -92,7 +92,6 @@ public class CelciusFarenheitConverter extends JFrame{
 		gc.gridx = 2;
 		panel.add(combo,gc);
 
-		gc.anchor = GridBagConstraints.LINE_START;
 		gc.gridx = 1;
 		gc.gridy = 2;
 		panel.add(convertBtn,gc);

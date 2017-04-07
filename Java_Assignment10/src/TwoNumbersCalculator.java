@@ -14,21 +14,22 @@ import javax.swing.SwingUtilities;
 
 public class TwoNumbersCalculator extends JFrame{
 
+	private JPanel panel;
 	private JLabel label,label1,label2,label3,result ;
 	private JTextField number1,number2;
 	private JButton calculate,reset;
 	private JComboBox comboBox;
 
 	public TwoNumbersCalculator(){
-
+		//setting the JFrame ready
 		super("Calculator");
-		setLocation(600, 200);
 		setSize(450,300);
+		setLocation(600,200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 
-		JPanel panel = new JPanel();
-		add(panel);
+		panel = new JPanel();
+		getContentPane().add(panel);
 
 		label = new JLabel("Add, subtract, multiply or divide 2 numbers");
 		label1 = new JLabel("Enter first number:   ");
@@ -39,6 +40,7 @@ public class TwoNumbersCalculator extends JFrame{
 		panel.add(label1);
 		panel.add(label2);
 		panel.add(label3);
+		panel.add(result);
 
 		number1 = new JTextField(5);
 		number2 = new JTextField(5);
@@ -88,15 +90,11 @@ public class TwoNumbersCalculator extends JFrame{
 		});
 
 		reset.addActionListener(new ActionListener(){
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(e.getSource()==reset){
-					number1.setText("");
-					number2.setText("");
-					result.setText("");
-
-				}
+				number1.setText("");
+				number2.setText("");
+				result.setText("");
 			}
 		});
 
@@ -143,18 +141,15 @@ public class TwoNumbersCalculator extends JFrame{
 		gc.gridy = 6;
 		panel.add(label3,gc);
 
-		gc.weighty =5;
 		gc.anchor = GridBagConstraints.FIRST_LINE_START;
 		gc.gridx = 1;
 		panel.add(result,gc);
 
 		setVisible(true);
-
 	}
 
 	public static void main(String[] args){
 		SwingUtilities.invokeLater(new Runnable(){
-
 			@Override
 			public void run() {
 				new TwoNumbersCalculator();

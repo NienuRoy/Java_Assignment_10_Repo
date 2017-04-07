@@ -16,8 +16,8 @@ public class FileCounter
 	public void read(Scanner in)
 	{
 		while(in.hasNext()){
-			String line = in.nextLine();
 			lineCount++; //counts each line
+			String line = in.nextLine();
 			characterCount +=line.length(); //finds the length of the line which gives the number of characters
 			String[] words = line.split(" ");
 			for(String word: words){
