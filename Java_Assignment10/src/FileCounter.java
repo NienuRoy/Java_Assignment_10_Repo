@@ -29,19 +29,15 @@ public class FileCounter
 	public int getWordCount()
 	{
 		return wordCount;
-
 	}
 
 	public int getLineCount()
 	{
 		return lineCount;
-
 	}
 
 	public int getCharacterCount()
 	{
 		return characterCount;
-
 	}
-
 }

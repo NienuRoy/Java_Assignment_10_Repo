@@ -1,6 +1,6 @@
 import java.io.FileReader;
 import java.io.IOException;
-import java. util.Scanner;
+import java.util.Scanner;
 
 /**
    This class prints a report on the contents of a file.
