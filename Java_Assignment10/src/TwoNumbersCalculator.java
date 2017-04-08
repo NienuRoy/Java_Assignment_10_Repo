@@ -95,6 +95,7 @@ public class TwoNumbersCalculator extends JFrame{
 				number1.setText("");
 				number2.setText("");
 				result.setText("");
+				comboBox.setSelectedIndex(0);;
 			}
 		});
 

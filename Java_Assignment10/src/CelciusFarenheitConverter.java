@@ -49,6 +49,7 @@ public class CelciusFarenheitConverter extends JFrame{
 		getContentPane().add(panel);
 
 		convertBtn.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent ae){
 				try{
 					if(combo.getSelectedItem().equals("Celcius to Farenheit")){
@@ -68,8 +69,10 @@ public class CelciusFarenheitConverter extends JFrame{
 		});
 
 		reset.addActionListener(new ActionListener(){
+			@Override
 			public void actionPerformed(ActionEvent ae){
 				tempField.setText("");
+				combo.setSelectedIndex(0);
 			}
 		});
 
